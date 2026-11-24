@@ -150,8 +150,13 @@
 	<string>https://raw.github.com/OpenEmu/OpenEmu-Update/master/oecores.xml</string>
 	<key>OELongBuildVersion</key>
 	<string></string>
+	<key>LSArchitecturePriority</key>
+	<array>
+		<string>x86_64</string>
+		<string>arm64</string>
+	</array>
 	<key>SUEnableAutomaticChecks</key>
-	<true/>
+	<false/>
 	<key>SUFeedURL</key>
 	<string>https://raw.github.com/OpenEmu/OpenEmu-Update/master/appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>

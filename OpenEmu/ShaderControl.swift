@@ -24,6 +24,7 @@
 
 import Foundation
 import OpenEmuKit
+import os.log
 
 extension Notification.Name {
     // The notification raised whenenever the preset changes for a ShaderControl object.
@@ -150,6 +151,9 @@ public class ShaderControl: NSObject {
         
         helper?.setShaderURL(shader.url, parameters: params) { error in
             if let error = error {
+                // Local diagnostic: these errors are otherwise silently dropped.
+                os_log(.error, "Shader '%{public}@' failed to apply: %{public}@",
+                       shader.name, String(describing: error))
                 handler?(error)
                 return
             }
